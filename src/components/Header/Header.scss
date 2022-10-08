@@ -1,0 +1,107 @@
+@import "../../sass/base";
+@import "../../sass/components";
+@import "../../sass/layout";
+
+.header {
+	margin-bottom: 120px;
+
+	.desk-title {
+		display: none;
+	}
+
+	img {
+		margin-bottom: 32px;
+	}
+
+	&__content {
+		max-width: 300px;
+		margin: 0 auto;
+
+		&-title,
+		&-info {
+			margin-bottom: 32px;
+		}
+	}
+}
+
+@media screen and (min-width: 375px) {
+	.header__content {
+		max-width: 343px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.header {
+		@include flexCenter(flex-start);
+
+		img {
+			width: 437px;
+			height: 700px;
+			margin: 0;
+		}
+
+		&__content {
+			max-width: 339px;
+			margin: 0;
+			position: relative;
+			right: 50px;
+
+			&-title,
+			&-info {
+				margin-bottom: 48px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.header {
+		max-width: 1275px;
+		height: 800px;
+		display: grid;
+		grid-template-columns: 450px 540px 1fr;
+
+		.desk-title {
+			width: 514px;
+			display: block;
+			position: absolute;
+			left: 0;
+			color: $white;
+			mix-blend-mode: difference;
+			transform: translate(32%, -40%);
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 450px;
+			height: 800px;
+			background-color: $black;
+		}
+
+		picture {
+			height: 800px;
+			grid-column: 2/3;
+		}
+
+		img {
+			width: 540px;
+			height: 800px;
+		}
+
+		&__content {
+			max-width: 350px;
+			right: 65px;
+
+			h1 {
+				display: none;
+			}
+
+			p {
+				margin-bottom: 64px;
+			}
+		}
+	}
+}

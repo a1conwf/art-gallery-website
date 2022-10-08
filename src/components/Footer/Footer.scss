@@ -1,0 +1,87 @@
+@import "../../sass/layout";
+@import "../../sass/base";
+
+.footer {
+	padding: 48px 32px;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+
+		&-logo {
+			width: 110px;
+			height: 40px;
+		}
+
+		&-logo,
+		&-text {
+			margin-bottom: 38px;
+		}
+
+		&-text {
+			font-size: 16px;
+			line-height: 26px;
+			max-width: 311px;
+		}
+
+		&-socials {
+			display: flex;
+			gap: 20px;
+			height: 20px;
+
+			li img:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	&.dark {
+		li img:hover {
+			filter: invert(61%) sepia(96%) saturate(222%) hue-rotate(340deg) brightness(90%) contrast(85%);
+		}
+	}
+
+	&.gold {
+		li img:hover {
+			filter: invert(100%) sepia(0%) saturate(14%) hue-rotate(194deg) brightness(103%) contrast(104%);
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.footer {
+		padding: 56px 40px;
+		&__inner {
+			flex-direction: row;
+
+			&-logo,
+			&-text {
+				margin-bottom: 0;
+			}
+
+			&-text {
+				max-width: 281px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.footer {
+		padding: 80px 165px;
+
+		&__inner {
+			&-logo {
+				width: 160px;
+				height: 58px;
+			}
+
+			&-text {
+				max-width: 430px;
+				font-size: 18px;
+				line-height: 28px;
+			}
+		}
+	}
+}
